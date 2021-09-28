@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>CNN Animal Recognition</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function preview() {
+            output.src=URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
+</head>
+<body>
+<div class="container-xxl"> 
+    <div class="p-3 mb-2 bg-danger text-white">
+      <h1><p class="text-center">Animal Recognition using CNN</p></h1>
+   </div>
+    <div class="jumbotron">
+       <br><h3>Please upload an animal image</h3><br>
+       <form action = "/predict" method = "POST" id = "upload-file" enctype = "multipart/form-data">
+            <input type="file" name="image" accept=".png, .jpg, .jpeg" onchange="preview()" class="btn btn-secondary"><br><br>
+            <img id="output" src="" alt="" /><br><br>
+            <input type="submit" name="predict" id="predict" value="Predict" class="btn btn-info"/>
+       </form>
+       <h4>{{value}}</h4>
+    </div>
+</div>
+</body>
+</html>
